@@ -1,0 +1,47 @@
+import 'package:flutter/material.dart';
+import 'listData/listData.dart';
+main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('flutter femo'),),
+        body:HomeContent(),
+      ),
+    );
+  }
+}
+class HomeContent extends StatelessWidget{
+  //自定义方法
+  Widget _getList(context,index){
+    return Container(
+      child: Column(children: <Widget>[
+        Image.network(listData[index]['avatar']),
+        SizedBox(height: 10.0),
+        Text(
+          listData[index]['title'],
+          style: TextStyle(
+            fontSize: 20.0,
+    
+          ),
+        )
+      ],),
+    );
+  }
+  @override
+  Widget build(BuildContext context){
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        mainAxisSpacing: 5.0,
+        crossAxisSpacing: 20.0,
+        crossAxisCount: 2,
+      ),
+      itemCount: listData.length,
+      itemBuilder: this._getList,
+    );
+  }
+}

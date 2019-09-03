@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+
+main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('flutter demo'),
+          ),
+          body: HomeContent()),
+    );
+  }
+}
+
+class HomeContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: <Widget>[
+        ListTile(
+          leading:Icon(Icons.ac_unit,size:30.0),//图标  size设置图标大小
+          title: Text('镇街道坚持以党建为引领，充分发挥基层',style: TextStyle(fontSize: 20.0,color: Colors.black)),//标题
+          subtitle: Text('分发挥基层'),//副标题
+          trailing: Image.network('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=112993812,1135479921&fm=26&gp=0.jpg'),
+        ),
+        ListTile(
+          leading:Icon(Icons.access_alarm),
+          title: Text('镇街道坚持以层'),
+          subtitle: Text('分发挥基层党建为引领，充分发挥基'),
+        ),
+      ],
+    );
+  }
+}

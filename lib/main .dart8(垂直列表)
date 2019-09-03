@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+
+main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('flutter demo'),
+          ),
+          body: HomeContent()),
+    );
+  }
+}
+
+class HomeContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding:EdgeInsets.all(10.0),
+      children: <Widget>[
+        Image.network('https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=795819488,1363532693&fm=26&gp=0.jpg'),
+        Container(
+          child: Text(
+            '我是标题一',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 30.0,
+              color: Colors.black
+            ),
+            ),
+          // height: 60.0,
+          padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+        ),
+        Image.network('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=112993812,1135479921&fm=26&gp=0.jpg'),
+        Image.network('https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3175209822,3562927353&fm=26&gp=0.jpg'),
+      ],
+    );
+  }
+}

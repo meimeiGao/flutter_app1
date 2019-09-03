@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build (BuildContext context){
+    return MaterialApp(
+      home:Scaffold(
+        appBar: AppBar(
+          title: Text('flutter demo'),
+          ),
+        body:HomeContent()
+        ),
+    
+    );
+
+  }
+}
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Center(
+      child:Container(
+        height: 200.0,//container的高度
+        width: 200.0,//container的宽度
+        // padding: EdgeInsets.all(8.0),//左上右下的内边距都是一样
+        alignment:Alignment.topLeft ,
+        padding:EdgeInsets.fromLTRB(10.0, 20.0, 15.0, 12.0),//分别设置左上右下的内边距
+        margin: EdgeInsets.fromLTRB(10.0, 20.0, 15.0, 12.0),//分别设置左上右下的外边距
+        transform: Matrix4.translationValues(20.0, 0.0, 0.0),//分别位移x y z轴
+        decoration:BoxDecoration(
+          color:Colors.yellow,//背景颜色
+          border: Border.all(
+            color:Colors.black,//边框颜色
+            width: 1.0,//边框大小
+          ),    
+          borderRadius: BorderRadius.all(//设置圆角
+            Radius.circular(5.0)
+          )
+        ),
+
+        child: Text(
+          '我是body',
+          textAlign: TextAlign.start,//文本对齐方式
+          overflow:TextOverflow.ellipsis,//溢出省略号
+          maxLines: 1,//文本的行数
+          textScaleFactor: 1.2,//字体放大的倍数
+          style:TextStyle(//文本样式
+            fontSize: 16.0,//字体大小
+            color: Colors.red, //字体颜色
+            // color:Color.fromARGB(a, r, g, b)//字体颜色
+            fontWeight: FontWeight.w800,//字体加粗
+            fontStyle: FontStyle.italic,//字体是否倾斜
+            decoration: TextDecoration.lineThrough,//none没有线,linThrough删除线,overline上划线,underline下划线
+            decorationColor: Colors.white,//线的颜色
+            decorationStyle: TextDecorationStyle.dashed,//线的风格(实线,虚线)
+            wordSpacing: 1.0,//单词间隙
+            letterSpacing: 2.0,//字间隙
+          )
+        ) ,
+    )
+  );
+  }
+}
+

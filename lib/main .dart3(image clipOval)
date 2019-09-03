@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build (BuildContext context){
+    return MaterialApp(
+      home:Scaffold(
+        appBar: AppBar(
+          title: Text('flutter demo'),
+          ),
+        body:HomeContent()
+        ),
+    
+    );
+
+  }
+}
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Center(
+      child:Container(
+        child: ClipOval(
+          child: Image.network(
+            'https://www.itying.com/images/201904/thumb_img/929_thumb_G_1554691691995.jpg',
+            width: 150.0,
+            height: 150.0,
+          ),
+        ),
+      ),
+
+      );
+  }
+}
+

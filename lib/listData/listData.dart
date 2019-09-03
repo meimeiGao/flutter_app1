@@ -1,0 +1,27 @@
+List listData = [
+  {
+    "title":"标题一",
+    "subTitle":'我是标题一的副标题我是标题一的副标题我是标题一的副标题我是标题一的副标题我是标题一的副标题我是标题一的副标题',
+    "avatar":"https://www.itying.com/images/201903/thumb_img/941_thumb_G_1552357493752.jpg"
+  },
+  {
+    "title":"标题二",
+    "subTitle":"我是标题二的副标题我是标题二的副标题我是标题二的副标题我是标题二的副标题我是标题二的副标题我是标题二的副标题",
+    "avatar":"https://www.itying.com/images/201904/thumb_img/929_thumb_G_1554691691995.jpg"
+  },
+  {
+    "title":"标题三",
+    "subTitle":"我是标题三的副标题我是标题三的副标题我是标题三的副标题我是标题三的副标题我是标题三的副标题我是标题三的副标题",
+    "avatar":"https://www.itying.com/images/201902/thumb_img/1067_thumb_G_1550416670143.jpg"
+  },
+  {
+    "title":"标题四",
+    "subTitle":"我是标题四的副标题我是标题四的副标题我是标题四的副标题我是标题四的副标题我是标题四的副标题我是标题四的副标题",
+    "avatar":"https://www.itying.com/images/201906/thumb_img/1120_thumb_G_1560842703267.jpg"
+  },
+  {
+    "title":"标题五",
+    "subTitle":"我是标题五的副标题我是标题五的副标题我是标题五的副标题我是标题五的副标题我是标题五的副标题我是标题五的副标题我是标题五的副标题",
+    "avatar":"https://www.itying.com/images/201904/thumb_img/1035_thumb_G_1554695135360.jpg"
+  },
+];

@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+import './listData/listData.dart';
+
+main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('flutter demo'),
+          ),
+          body: HomeContent()),
+    );
+  }
+}
+
+class HomeContent extends StatelessWidget {
+  //自定义的方法
+  List<Widget> _getData(){
+    List<Widget> list = new List();
+    for(var i = 0 ; i < 20 ; i++){
+      list.add(
+        Container(
+          alignment: Alignment.center,
+          color: Colors.pink,
+          child: Text(
+            '这是数据$i',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.black
+            ),
+          ),
+        )
+      );
+    }
+    return list;
+  }
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisSpacing: 20.0,//水平元素之间的距离
+      mainAxisSpacing: 20.0,//垂直元素之间的距离
+      padding: EdgeInsets.all(10.0),
+      childAspectRatio: 0.7,//宽与高之间的距离
+      crossAxisCount: 3,//列的数量
+      children: this._getData(),
+    );
+  }
+}

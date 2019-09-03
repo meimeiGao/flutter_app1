@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+import 'listData/listData.dart';
+
+main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('flutter femo'),),
+        body:HomePage(),
+      ),
+    );
+  }
+}
+
+
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
+
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List list  = new List();
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+       child: ListView(
+         children: <Widget>[
+           Column(
+             children: list.map((value){
+               return ListTile(
+                 title: Text('${value}'),
+               );
+             }).toList(),
+           ),
+           RaisedButton(
+             child: Text('点我'),
+             onPressed: (){
+                setState(() {
+                  this.list.add(Text("我是数据一"));
+                  this.list.add(Text("我是数据二"));
+                });
+             },
+           )
+         ],
+       ),
+    );
+  }
+}

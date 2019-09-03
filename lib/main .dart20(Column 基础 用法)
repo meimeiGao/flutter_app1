@@ -1,0 +1,58 @@
+import 'package:flutter/material.dart';
+import 'listData/listData.dart';
+
+main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('flutter femo'),),
+        body:HomeContent(),
+      ),
+    );
+  }
+}
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      height: 500.0,
+      width: 150.0,
+      color: Colors.grey,
+      child:Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,//元素之间的距离与两边的距离是均匀分配的
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,//两边没有距离,元素与元素之间的距离是一样的
+        // mainAxisAlignment: MainAxisAlignment.spaceAround,//元素与元素之间的距离是元素是边上的距离的两倍
+        crossAxisAlignment: CrossAxisAlignment.center,//元素的高度为整个容器的高度
+        children: <Widget>[
+          IconContainer(Icons.search,color: Colors.red,),
+          IconContainer(Icons.security,color: Colors.blue,),
+          IconContainer(Icons.select_all,color: Colors.orange,),
+        ],
+    )
+    );
+  }
+}
+
+class IconContainer extends StatelessWidget{
+  double size=32.0;
+  Color color=Colors.red;
+  IconData icon;
+  IconContainer(this.icon,{this.color,this.size});
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      height: 100.0,
+      width: 100.0,
+      color: this.color,
+      child: Center(
+        child: Icon(this.icon,size: this.size,color:Colors.white,),
+      ),
+    );
+  }
+}

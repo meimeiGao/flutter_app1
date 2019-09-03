@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';
+
+main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('flutter demo'),
+          ),
+          body: HomeContent()),
+    );
+  }
+}
+
+class HomeContent extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+     child: Container(
+       width: 150.0,
+       height: 150,
+       decoration: BoxDecoration(
+         color: Colors.black,
+         borderRadius: BorderRadius.all(//设置圆形
+           Radius.circular(150.0)
+         ),
+         image:DecorationImage(
+           image: NetworkImage('https://www.itying.com/images/201902/thumb_img/1067_thumb_G_1550416670143.jpg')//远程图片
+         )
+       ),
+   
+     ),
+    );
+  }
+}

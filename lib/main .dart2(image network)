@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build (BuildContext context){
+    return MaterialApp(
+      home:Scaffold(
+        appBar: AppBar(
+          title: Text('flutter demo'),
+          ),
+        body:HomeContent()
+        ),
+    
+    );
+
+  }
+}
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Center(
+      child: Container(
+        child: Image.network(//引入远程图片
+          'http://blogimages.jspang.com/blogtouxiang1.jpg',
+          alignment:Alignment.topLeft,//图片在容器中的对齐方式
+          color: Colors.yellow,//图片的背景色
+          colorBlendMode: BlendMode.colorDodge,//图片的混合颜色
+          fit:BoxFit.cover,//显示可能拉伸,可能裁切,充满(图片要充满整个容器,还不变形)
+          // fit: BoxFit.contain,//全图显示,显示原比例,可能会有空隙
+          // fit: BoxFit.fill,//全图显示,图片会被拉伸,并充满父容器
+          
+
+          ),
+        width: 300.0,
+        height: 300.0,
+        decoration: BoxDecoration(
+          color: Colors.yellow,
+        ),
+      ),
+
+      );
+  }
+}
+

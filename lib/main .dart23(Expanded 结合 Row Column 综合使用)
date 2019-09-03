@@ -1,0 +1,87 @@
+import 'package:flutter/material.dart';
+import 'listData/listData.dart';
+
+main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('flutter femo'),),
+        body:HomeContent(),
+      ),
+    );
+  }
+}
+
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Column(
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Expanded(
+              child:  Container(
+              height: 180.0,
+              color: Colors.black,
+              child: Text('flutter 你好'),
+        ),)],),
+        SizedBox(height: 10.0,),
+        Row(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                height: 180.0,
+                child:Image.network(
+                  'https://www.itying.com/images/201904/thumb_img/929_thumb_G_1554691691995.jpg',
+                  fit:BoxFit.cover
+                  ),
+                  
+              ),
+              flex: 2,
+            ),
+            SizedBox(width: 10.0,),
+            Expanded(
+              flex: 1,
+              child: Container(
+                height: 180.0,
+                child: ListView(children: <Widget>[
+                  Container(
+                    height: 85.0,
+                    child:Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg',fit: BoxFit.cover,),
+                  ),
+                  SizedBox(height: 10.0,),
+                  Container(
+                  height: 85.0,
+                  child:Image.network('https://www.itying.com/images/201903/thumb_img/1061_thumb_G_1551535759942.jpg',fit: BoxFit.cover,),
+                ),
+                ],)
+              )
+            ),
+        ],)
+    ],);
+  }
+}
+
+class IconContainer extends StatelessWidget{
+  double size=32.0;
+  Color color=Colors.red;
+  IconData icon;
+  IconContainer(this.icon,{this.color,this.size});
+  @override
+  Widget build(BuildContext context){
+    return Container(
+      height: 100.0,
+      width: 100.0,
+      color: this.color,
+      child: Center(
+        child: Icon(this.icon,size: this.size,color:Colors.white,),
+      ),
+    );
+  }
+}

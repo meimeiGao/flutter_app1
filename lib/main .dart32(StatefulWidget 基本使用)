@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+import 'listData/listData.dart';
+
+main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('flutter femo'),),
+        body:HomePage(),
+      ),
+    );
+  }
+}
+
+
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
+
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int number=0;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+       child: Column(children: <Widget>[
+        SizedBox(height: 50.0,),
+         Chip(
+           label: Text('${this.number}'),
+         ),
+         SizedBox(height: 20.0,),
+         RaisedButton(
+           child: Text("点我加加"),
+           onPressed: (){
+             setState((){
+               this.number++;
+             });
+           },
+         )
+       ],),
+    );
+  }
+}
